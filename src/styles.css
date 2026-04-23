@@ -137,6 +137,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: clip; /* Melhora compatibilidade com observers */
   }
 
   body {
@@ -146,6 +147,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "ss01", "cv11";
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4 {
@@ -199,7 +203,33 @@
   text-wrap: pretty;
 }
 
-/* Hairline divider used for editorial feel */
-@utility divide-hairline {
-  border-color: oklch(0.18 0.012 50 / 0.08);
+/* 
+ * PERFORMANCE & ACCESSIBILITY FAILSAFES
+ */
+@layer utilities {
+  /* Força visibilidade se o gatilho falhar em 1s */
+  [data-aos]:not(.aos-animate),
+  .reveal:not(.revealed),
+  .animate-fade-up,
+  [class*="animate-"] {
+    animation-fill-mode: both !important;
+    /* Se a animação não rodar, este fallback garante opacidade 1 após 1.5s */
+    animation: fade-in 0.5s 1.5s forwards !important;
+  }
+
+  /* Respeito à acessibilidade */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    
+    [data-aos], .reveal, [class*="animate-"] {
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+    }
+  }
 }

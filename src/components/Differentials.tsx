@@ -44,7 +44,7 @@ export function Differentials() {
           <div className="md:col-span-7">
             <div className="grid sm:grid-cols-2 gap-px bg-background/10">
               {items.map((item) => (
-                <div key={item.title} className="bg-foreground p-8">
+                <div key={item.title} className="bg-foreground p-8 animate-fade-in">
                   <div className="font-display text-xs text-primary-glow tracking-widest mb-5">{item.n}</div>
                   <h3 className="font-display font-bold text-xl leading-tight">{item.title}</h3>
                   <p className="mt-3 text-sm text-background/70 leading-relaxed font-light">{item.text}</p>
