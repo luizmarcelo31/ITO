@@ -26,7 +26,7 @@ export function LazySection({
   }, [isVisible]);
 
   return (
-    <div ref={ref} style={{ minHeight: !hasBeenVisible ? minHeight : undefined }}>
+    <div ref={ref} style={{ minHeight }}>
       {hasBeenVisible ? children : null}
     </div>
   );
