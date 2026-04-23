@@ -1,0 +1,208 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+/*
+ * ITO RECEPTIVOS — Premium Design System
+ * 60/30/10 — White (60%) · Orange (30%) · Black (10%)
+ * Headline: Poppins · Body: Inter
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --color-sand: var(--sand);
+
+  --font-display: 'Poppins', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --animate-fade-in: fade-in 0.7s ease-out;
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* 60/30/10 — Pure white dominant, deep black foreground */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.14 0 0);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.14 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.14 0 0);
+
+  /* Brand — vibrant orange (30% accent) */
+  --primary: oklch(0.68 0.19 45);
+  --primary-foreground: oklch(1 0 0);
+  --primary-glow: oklch(0.76 0.17 55);
+
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.14 0 0);
+
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+
+  --accent: oklch(0.96 0.04 60);
+  --accent-foreground: oklch(0.42 0.16 45);
+
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(1 0 0);
+
+  --success: oklch(0.6 0.13 145);
+  --success-foreground: oklch(1 0 0);
+
+  --whatsapp: oklch(0.62 0.15 145);
+  --whatsapp-foreground: oklch(1 0 0);
+
+  /* Custom tokens */
+  --ink: oklch(0.14 0 0);
+  --sand: oklch(0.98 0 0);
+
+  --border: oklch(0.92 0 0);
+  --input: oklch(0.92 0 0);
+  --ring: oklch(0.68 0.19 45);
+
+  /* Gradients — orange forward */
+  --gradient-primary: linear-gradient(135deg, oklch(0.66 0.2 40), oklch(0.74 0.17 55));
+  --gradient-warm: linear-gradient(180deg, oklch(1 0 0) 0%, oklch(0.98 0.01 70) 100%);
+  --gradient-ink: linear-gradient(180deg, oklch(0.18 0 0) 0%, oklch(0.1 0 0) 100%);
+  --gradient-overlay: linear-gradient(180deg, oklch(0.05 0 0 / 0) 35%, oklch(0.05 0 0 / 0.82) 100%);
+
+  /* Shadows — clean, neutral */
+  --shadow-xs: 0 1px 2px oklch(0 0 0 / 0.05);
+  --shadow-sm: 0 2px 6px -1px oklch(0 0 0 / 0.06), 0 1px 2px oklch(0 0 0 / 0.04);
+  --shadow-md: 0 6px 16px -4px oklch(0 0 0 / 0.08), 0 2px 4px oklch(0 0 0 / 0.04);
+  --shadow-lg: 0 18px 40px -16px oklch(0 0 0 / 0.18), 0 6px 12px -6px oklch(0 0 0 / 0.08);
+  --shadow-card: 0 1px 2px oklch(0 0 0 / 0.04), 0 8px 24px -12px oklch(0 0 0 / 0.1);
+  --shadow-glow: 0 14px 40px -12px oklch(0.68 0.19 45 / 0.4);
+}
+
+.dark {
+  --background: oklch(0.14 0.012 50);
+  --foreground: oklch(0.96 0.008 75);
+  --card: oklch(0.18 0.012 50);
+  --card-foreground: oklch(0.96 0.008 75);
+  --popover: oklch(0.18 0.012 50);
+  --popover-foreground: oklch(0.96 0.008 75);
+  --primary: oklch(0.7 0.15 50);
+  --primary-foreground: oklch(0.14 0.012 50);
+  --primary-glow: oklch(0.78 0.14 55);
+  --secondary: oklch(0.22 0.012 50);
+  --secondary-foreground: oklch(0.96 0.008 75);
+  --muted: oklch(0.22 0.012 50);
+  --muted-foreground: oklch(0.68 0.012 50);
+  --accent: oklch(0.28 0.06 45);
+  --accent-foreground: oklch(0.96 0.008 75);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.7 0.15 50);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+}
+
+/* Keyframes */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Utilities */
+@utility bg-gradient-primary {
+  background-image: var(--gradient-primary);
+}
+@utility bg-gradient-warm {
+  background-image: var(--gradient-warm);
+}
+@utility bg-gradient-ink {
+  background-image: var(--gradient-ink);
+}
+@utility bg-gradient-overlay {
+  background-image: var(--gradient-overlay);
+}
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+@utility shadow-elevated {
+  box-shadow: var(--shadow-lg);
+}
+@utility text-balance {
+  text-wrap: balance;
+}
+@utility text-pretty {
+  text-wrap: pretty;
+}
+
+/* Hairline divider used for editorial feel */
+@utility divide-hairline {
+  border-color: oklch(0.18 0.012 50 / 0.08);
+}
