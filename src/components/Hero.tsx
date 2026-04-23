@@ -1,4 +1,3 @@
-import heroImg from "@/assets/hero-beach.jpg";
 import { whatsappLink } from "@/lib/whatsapp";
 
 export function Hero() {
@@ -7,7 +6,7 @@ export function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src={heroImg}
+          src="/hero-beach.jpg"
           alt="Litoral nordestino — destino Ito Receptivos"
           width={1920}
           height={1280}
