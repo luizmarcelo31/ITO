@@ -2,7 +2,6 @@ import React, { Suspense, lazy } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { LazySection } from "@/components/LazySection";
 
 // Lazy load components below the fold
 const Problem = lazy(() => import("@/components/Problem").then(m => ({ default: m.Problem })));
@@ -43,14 +42,14 @@ function Index() {
       <Navbar />
       <Hero />
       <Suspense fallback={<div className="h-20" />}>
-        <LazySection minHeight="400px"><Problem /></LazySection>
-        <LazySection minHeight="600px"><Destinations /></LazySection>
-        <LazySection minHeight="500px"><Offers /></LazySection>
-        <LazySection minHeight="400px"><Differentials /></LazySection>
-        <LazySection minHeight="400px"><Testimonials /></LazySection>
-        <LazySection minHeight="400px"><Objections /></LazySection>
-        <LazySection minHeight="300px"><FinalCTA /></LazySection>
-        <LazySection minHeight="200px"><Footer /></LazySection>
+        <Problem />
+        <Destinations />
+        <Offers />
+        <Differentials />
+        <Testimonials />
+        <Objections />
+        <FinalCTA />
+        <Footer />
         <FloatingWhatsApp />
       </Suspense>
     </main>

@@ -147,8 +147,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "ss01", "cv11";
-    overflow-x: hidden;
-    position: relative;
     min-height: 100vh;
   }
 
@@ -207,16 +205,6 @@
  * PERFORMANCE & ACCESSIBILITY FAILSAFES
  */
 @layer utilities {
-  /* Força visibilidade se o gatilho falhar em 1s */
-  [data-aos]:not(.aos-animate),
-  .reveal:not(.revealed),
-  .animate-fade-up,
-  [class*="animate-"] {
-    animation-fill-mode: both !important;
-    /* Se a animação não rodar, este fallback garante opacidade 1 após 1.5s */
-    animation: fade-in 0.5s 1.5s forwards !important;
-  }
-
   /* Respeito à acessibilidade */
   @media (prefers-reduced-motion: reduce) {
     *, ::before, ::after {
