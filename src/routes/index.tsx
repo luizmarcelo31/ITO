@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { DeferredMount } from "@/components/DeferredMount";
 
 // Lazy load components below the fold
 const Problem = lazy(() => import("@/components/Problem").then(m => ({ default: m.Problem })));
@@ -42,15 +43,15 @@ function Index() {
       <Navbar />
       <Hero />
       <Suspense fallback={<div className="h-20" />}>
-        <Problem />
-        <Destinations />
-        <Offers />
-        <Differentials />
-        <Testimonials />
-        <Objections />
-        <FinalCTA />
-        <Footer />
-        <FloatingWhatsApp />
+        <DeferredMount delay={100}><Problem /></DeferredMount>
+        <DeferredMount delay={300}><Destinations /></DeferredMount>
+        <DeferredMount delay={500}><Offers /></DeferredMount>
+        <DeferredMount delay={700}><Differentials /></DeferredMount>
+        <DeferredMount delay={900}><Testimonials /></DeferredMount>
+        <DeferredMount delay={1100}><Objections /></DeferredMount>
+        <DeferredMount delay={1300}><FinalCTA /></DeferredMount>
+        <DeferredMount delay={1500}><Footer /></DeferredMount>
+        <DeferredMount delay={2000}><FloatingWhatsApp /></DeferredMount>
       </Suspense>
     </main>
   );

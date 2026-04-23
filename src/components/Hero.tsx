@@ -6,7 +6,7 @@ export function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/hero-beach.jpg"
+          src="/hero-beach.webp"
           alt="Litoral nordestino — destino Ito Receptivos"
           width={1920}
           height={1280}
